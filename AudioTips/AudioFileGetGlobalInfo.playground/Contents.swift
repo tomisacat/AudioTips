@@ -55,10 +55,12 @@ for idx in 0..<count {
                                     &name)
     Swift.print(name ?? "")
 }
+types.deallocate(capacity: Int(propertySize))
 
 // Conclusion:
 // 1. Choose different generic types based on the return value's type
 // 2. there is toll-free bridging between CoreFoundation and Foundation types. For example: You should use `NSString` instead of `String` when get `kAudioFileGlobalInfo_FileTypeName`, otherwise you will get nothing with Swift types.
+// 3. You have to call `deallocate` manually to release memory of Unsafe* pointers
 
 // Many thank to onevcat( https://onevcat.com ), he give me a lot help.
 
