@@ -47,6 +47,7 @@
 		F239A9921E9DDDB7001CA1F9 /* AudioTipsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioTipsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F239A9961E9DDDB7001CA1F9 /* AudioTipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTipsUITests.swift; sourceTree = "<group>"; };
 		F239A9981E9DDDB7001CA1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F239A9A51E9DDE9B001CA1F9 /* AudioFileGetGlobalInfo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AudioFileGetGlobalInfo.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 		F239A9751E9DDDB6001CA1F9 /* AudioTips */ = {
 			isa = PBXGroup;
 			children = (
+				F239A9A41E9DDE77001CA1F9 /* Playground */,
 				F239A9761E9DDDB6001CA1F9 /* AppDelegate.swift */,
 				F239A9781E9DDDB6001CA1F9 /* ViewController.swift */,
 				F239A97A1E9DDDB6001CA1F9 /* Main.storyboard */,
@@ -123,6 +125,14 @@
 				F239A9981E9DDDB7001CA1F9 /* Info.plist */,
 			);
 			path = AudioTipsUITests;
+			sourceTree = "<group>";
+		};
+		F239A9A41E9DDE77001CA1F9 /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				F239A9A51E9DDE9B001CA1F9 /* AudioFileGetGlobalInfo.playground */,
+			);
+			name = Playground;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
