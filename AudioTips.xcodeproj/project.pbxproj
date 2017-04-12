@@ -14,6 +14,9 @@
 		F239A9811E9DDDB6001CA1F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F239A97F1E9DDDB6001CA1F9 /* LaunchScreen.storyboard */; };
 		F239A98C1E9DDDB7001CA1F9 /* AudioTipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F239A98B1E9DDDB7001CA1F9 /* AudioTipsTests.swift */; };
 		F239A9971E9DDDB7001CA1F9 /* AudioTipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F239A9961E9DDDB7001CA1F9 /* AudioTipsUITests.swift */; };
+		F239A9A81E9E0A15001CA1F9 /* guitar.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F239A9A71E9E0A15001CA1F9 /* guitar.m4a */; };
+		F239A9A91E9E0A15001CA1F9 /* guitar.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F239A9A71E9E0A15001CA1F9 /* guitar.m4a */; };
+		F239A9AA1E9E0A15001CA1F9 /* guitar.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F239A9A71E9E0A15001CA1F9 /* guitar.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,8 @@
 		F239A9961E9DDDB7001CA1F9 /* AudioTipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTipsUITests.swift; sourceTree = "<group>"; };
 		F239A9981E9DDDB7001CA1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F239A9A51E9DDE9B001CA1F9 /* AudioFileGetGlobalInfo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AudioFileGetGlobalInfo.playground; sourceTree = "<group>"; };
+		F239A9A71E9E0A15001CA1F9 /* guitar.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = guitar.m4a; sourceTree = "<group>"; };
+		F239A9AB1E9E1588001CA1F9 /* AudioFileOpenClose.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AudioFileOpenClose.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +103,7 @@
 		F239A9751E9DDDB6001CA1F9 /* AudioTips */ = {
 			isa = PBXGroup;
 			children = (
+				F239A9A61E9E09FC001CA1F9 /* Resources */,
 				F239A9A41E9DDE77001CA1F9 /* Playground */,
 				F239A9761E9DDDB6001CA1F9 /* AppDelegate.swift */,
 				F239A9781E9DDDB6001CA1F9 /* ViewController.swift */,
@@ -131,8 +137,17 @@
 			isa = PBXGroup;
 			children = (
 				F239A9A51E9DDE9B001CA1F9 /* AudioFileGetGlobalInfo.playground */,
+				F239A9AB1E9E1588001CA1F9 /* AudioFileOpenClose.playground */,
 			);
 			name = Playground;
+			sourceTree = "<group>";
+		};
+		F239A9A61E9E09FC001CA1F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F239A9A71E9E0A15001CA1F9 /* guitar.m4a */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +262,7 @@
 			files = (
 				F239A9811E9DDDB6001CA1F9 /* LaunchScreen.storyboard in Resources */,
 				F239A97E1E9DDDB6001CA1F9 /* Assets.xcassets in Resources */,
+				F239A9A81E9E0A15001CA1F9 /* guitar.m4a in Resources */,
 				F239A97C1E9DDDB6001CA1F9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F239A9A91E9E0A15001CA1F9 /* guitar.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F239A9AA1E9E0A15001CA1F9 /* guitar.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +544,7 @@
 				F239A99D1E9DDDB7001CA1F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F239A99E1E9DDDB7001CA1F9 /* Build configuration list for PBXNativeTarget "AudioTipsTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +553,7 @@
 				F239A9A01E9DDDB7001CA1F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F239A9A11E9DDDB7001CA1F9 /* Build configuration list for PBXNativeTarget "AudioTipsUITests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +562,7 @@
 				F239A9A31E9DDDB7001CA1F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
