@@ -51,14 +51,25 @@ if let fd = fd {
         }
     }
     
-    // packet size
+    // max packet size
     var packetSize: UInt32 = 0
+    var maxPacketSize: UInt32 = 0
     status = AudioFileGetPropertyInfo(fd, kAudioFilePropertyMaximumPacketSize, &packetSize, &writable)
     if status == noErr {
-        var maxPacketSize: UInt64 = 0
         status = AudioFileGetProperty(fd, kAudioFilePropertyMaximumPacketSize, &packetSize, &maxPacketSize)
         if status == noErr {
-            print(maxPacketSize)
+            print("max packet size: \(maxPacketSize)")
+        }
+    }
+    
+    // packet count
+    var packetCountSize: UInt32 = 0
+    var packetCount: UInt32 = 0
+    status = AudioFileGetPropertyInfo(fd, kAudioFilePropertyAudioDataPacketCount, &packetCountSize, &writable)
+    if status == noErr {
+        status = AudioFileGetProperty(fd, kAudioFilePropertyAudioDataPacketCount, &packetCountSize, &packetCount)
+        if status == noErr {
+            print("packet count: \(packetCount)")
         }
     }
     
@@ -67,9 +78,24 @@ if let fd = fd {
     var bytes: UInt64 = 0
     status = AudioFileReadBytes(fd, false, 0, &bytesToRead, &bytes)
     if status == noErr {
-        print("\(bytesToRead) read")
+        print("\(bytesToRead) bytes read")
     }
     
+    // read packet
+    let packetBuffer: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: Int(maxPacketSize * 2) / MemoryLayout<CChar>.size)
+    for idx in stride(from: 0, to: packetCount, by: 2) {
+        let aspd: UnsafeMutablePointer<AudioStreamPacketDescription> = UnsafeMutablePointer<AudioStreamPacketDescription>.allocate(capacity: 2)
+        var pktNum: UInt32 = 2
+        var packetBufferLength: UInt32 = maxPacketSize * 2
+        if idx + 2 > packetCount {
+            pktNum = 1
+        }
+        status = AudioFileReadPacketData(fd, false, &(packetBufferLength), aspd, Int64(idx), &pktNum, packetBuffer)
+        if status == kAudioFileEndOfFileError {
+            break
+        }
+        print("\(idx): \n \(aspd[0])\n \(aspd[1])\n packetBufferLength: \(packetBufferLength)\n pktNum: \(pktNum)\n---------")
+    }
     
     // finally close file
     closeFile(fd: fd)
