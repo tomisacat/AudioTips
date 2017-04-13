@@ -35,7 +35,7 @@ status = AudioFileGetGlobalInfoSize(readOrWrite,
                                     nil,
                                     &propertySize)
 // 2. get property
-let types: UnsafeMutablePointer<OSType> = UnsafeMutablePointer<OSType>.allocate(capacity: Int(propertySize))
+let types: UnsafeMutablePointer<OSType> = UnsafeMutablePointer<OSType>.allocate(capacity: Int(propertySize) / MemoryLayout<OSType>.size)
 status = AudioFileGetGlobalInfo(readOrWrite,
                                 0,
                                 nil,
