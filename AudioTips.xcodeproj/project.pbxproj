@@ -53,6 +53,7 @@
 		F239A9A51E9DDE9B001CA1F9 /* AudioFileGetGlobalInfo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AudioFileGetGlobalInfo.playground; sourceTree = "<group>"; };
 		F239A9A71E9E0A15001CA1F9 /* guitar.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = guitar.m4a; sourceTree = "<group>"; };
 		F239A9AB1E9E1588001CA1F9 /* AudioFileOperation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AudioFileOperation.playground; sourceTree = "<group>"; };
+		F239A9AC1E9F680F001CA1F9 /* ExtAudioFileOperation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ExtAudioFileOperation.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +139,7 @@
 			children = (
 				F239A9A51E9DDE9B001CA1F9 /* AudioFileGetGlobalInfo.playground */,
 				F239A9AB1E9E1588001CA1F9 /* AudioFileOperation.playground */,
+				F239A9AC1E9F680F001CA1F9 /* ExtAudioFileOperation.playground */,
 			);
 			name = Playground;
 			sourceTree = "<group>";
