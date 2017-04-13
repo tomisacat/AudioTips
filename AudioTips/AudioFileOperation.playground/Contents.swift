@@ -51,6 +51,17 @@ if let fd = fd {
         }
     }
     
+    // packet size
+    var packetSize: UInt32 = 0
+    status = AudioFileGetPropertyInfo(fd, kAudioFilePropertyMaximumPacketSize, &packetSize, &writable)
+    if status == noErr {
+        var maxPacketSize: UInt64 = 0
+        status = AudioFileGetProperty(fd, kAudioFilePropertyMaximumPacketSize, &packetSize, &maxPacketSize)
+        if status == noErr {
+            print(maxPacketSize)
+        }
+    }
+    
     // read bytes
     var bytesToRead: UInt32 = 16
     var bytes: UInt64 = 0
