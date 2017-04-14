@@ -47,9 +47,9 @@ let fd = openFile()
 if let fd = fd {
     print("succeed to open file")
     
-    var asbd: UnsafeMutablePointer<AudioStreamBasicDescription> = UnsafeMutablePointer<AudioStreamBasicDescription>.allocate(capacity: 1)
+    let asbd: UnsafeMutablePointer<AudioStreamBasicDescription> = UnsafeMutablePointer<AudioStreamBasicDescription>.allocate(capacity: 1)
     var fileDataFormatSize: UInt32 = UInt32(MemoryLayout<AudioStreamBasicDescription>.size)
-    var status: OSStatus = ExtAudioFileGetProperty(fd, kExtAudioFileProperty_FileDataFormat, &fileDataFormatSize, &asbd)
+    var status: OSStatus = ExtAudioFileGetProperty(fd, kExtAudioFileProperty_FileDataFormat, &fileDataFormatSize, asbd)
     if status == noErr {
         print("succeed to read audio stream basic description")
     }
@@ -59,6 +59,20 @@ if let fd = fd {
     status = ExtAudioFileGetProperty(fd, kExtAudioFileProperty_FileMaxPacketSize, &maxPacketSizeLength, &maxPacketSize)
     if status == noErr {
         print("max packet size: \(maxPacketSize)")
+    }
+    
+    var outDesc: AudioStreamBasicDescription = asbd.advanced(by: 0).pointee
+    outDesc.mFormatID = kAudioFormatLinearPCM
+    outDesc.mFormatFlags = kAudioFormatFlagIsPacked + kAudioFormatFlagIsSignedInteger
+    outDesc.mBitsPerChannel = 16
+    outDesc.mChannelsPerFrame = 2
+    outDesc.mBytesPerFrame = 4
+    outDesc.mFramesPerPacket = 1
+    outDesc.mBytesPerPacket = 4
+    let outDescSize: UInt32 = UInt32(MemoryLayout<AudioStreamBasicDescription>.size)
+    status = ExtAudioFileSetProperty(fd, kExtAudioFileProperty_ClientDataFormat, outDescSize, &outDesc)
+    if status == noErr {
+        print("succeed to set client data format")
     }
     
     closeFile(fd: fd)
