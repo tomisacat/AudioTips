@@ -47,6 +47,7 @@ let fd = openFile()
 if let fd = fd {
     print("succeed to open file")
     
+    // file data format
     let asbd: UnsafeMutablePointer<AudioStreamBasicDescription> = UnsafeMutablePointer<AudioStreamBasicDescription>.allocate(capacity: 1)
     var fileDataFormatSize: UInt32 = UInt32(MemoryLayout<AudioStreamBasicDescription>.size)
     var status: OSStatus = ExtAudioFileGetProperty(fd, kExtAudioFileProperty_FileDataFormat, &fileDataFormatSize, asbd)
@@ -54,6 +55,7 @@ if let fd = fd {
         print("succeed to read audio stream basic description")
     }
     
+    // max packet size
     var maxPacketSize: UInt32 = 0
     var maxPacketSizeLength: UInt32 = UInt32(MemoryLayout<UInt32>.size)
     status = ExtAudioFileGetProperty(fd, kExtAudioFileProperty_FileMaxPacketSize, &maxPacketSizeLength, &maxPacketSize)
@@ -61,6 +63,7 @@ if let fd = fd {
         print("max packet size: \(maxPacketSize)")
     }
     
+    // set client data format
     var outDesc: AudioStreamBasicDescription = asbd.advanced(by: 0).pointee
     outDesc.mFormatID = kAudioFormatLinearPCM
     outDesc.mFormatFlags = kAudioFormatFlagIsPacked + kAudioFormatFlagIsSignedInteger
@@ -73,6 +76,22 @@ if let fd = fd {
     status = ExtAudioFileSetProperty(fd, kExtAudioFileProperty_ClientDataFormat, outDescSize, &outDesc)
     if status == noErr {
         print("succeed to set client data format")
+    }
+    
+    // read packet
+    let outputBufferSize: size_t = 0x8000 // 32 KB buffer
+    var packetsPerBuffer: UInt32 = UInt32(outputBufferSize) / outDesc.mBytesPerPacket
+    let outputBuffer: UnsafeMutableRawPointer = malloc(MemoryLayout<UInt8>.size * outputBufferSize)  // buffer data
+    var buffer = AudioBuffer()  // buffer
+    buffer.mNumberChannels = outDesc.mChannelsPerFrame
+    buffer.mDataByteSize = UInt32(outputBufferSize)
+    buffer.mData = outputBuffer
+    var convertedData = AudioBufferList()  // buffer list
+    convertedData.mNumberBuffers = 1
+    convertedData.mBuffers = buffer
+    status = ExtAudioFileRead(fd, &packetsPerBuffer, &convertedData)
+    if status == noErr {
+        print("succeed to read data")
     }
     
     closeFile(fd: fd)

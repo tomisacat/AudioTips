@@ -7,4 +7,8 @@ Some usage tips about Audio(AudioToolbox/CoreAudio/AudioUnit).
 * AudioFileOpen/AudioFileClose
 * ExtAudioFile*
 
+## Reference
+
+* [play_and_record_with_coreaudio](https://github.com/cz-it/play_and_record_with_coreaudio)
+
 
