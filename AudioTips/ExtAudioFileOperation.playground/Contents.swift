@@ -47,6 +47,20 @@ let fd = openFile()
 if let fd = fd {
     print("succeed to open file")
     
+    var asbd: UnsafeMutablePointer<AudioStreamBasicDescription> = UnsafeMutablePointer<AudioStreamBasicDescription>.allocate(capacity: 1)
+    var fileDataFormatSize: UInt32 = UInt32(MemoryLayout<AudioStreamBasicDescription>.size)
+    var status: OSStatus = ExtAudioFileGetProperty(fd, kExtAudioFileProperty_FileDataFormat, &fileDataFormatSize, &asbd)
+    if status == noErr {
+        print("succeed to read audio stream basic description")
+    }
+    
+    var maxPacketSize: UInt32 = 0
+    var maxPacketSizeLength: UInt32 = UInt32(MemoryLayout<UInt32>.size)
+    status = ExtAudioFileGetProperty(fd, kExtAudioFileProperty_FileMaxPacketSize, &maxPacketSizeLength, &maxPacketSize)
+    if status == noErr {
+        print("max packet size: \(maxPacketSize)")
+    }
+    
     closeFile(fd: fd)
 }
 
