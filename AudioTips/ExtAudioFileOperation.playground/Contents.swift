@@ -94,6 +94,19 @@ if let fd = fd {
         print("succeed to read data")
     }
     
+    // check
+    var position: Int64 = 0
+    status = ExtAudioFileTell(fd, &position)
+    if status == noErr {
+        print("read to \(position)")
+    }
+    
+    // seek
+    status = ExtAudioFileSeek(fd, 2)
+    if status == noErr {
+        print("succeed to seek")
+    }
+    
     closeFile(fd: fd)
 }
 
