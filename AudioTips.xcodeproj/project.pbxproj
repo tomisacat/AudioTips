@@ -17,6 +17,9 @@
 		F239A9A81E9E0A15001CA1F9 /* guitar.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F239A9A71E9E0A15001CA1F9 /* guitar.m4a */; };
 		F239A9A91E9E0A15001CA1F9 /* guitar.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F239A9A71E9E0A15001CA1F9 /* guitar.m4a */; };
 		F239A9AA1E9E0A15001CA1F9 /* guitar.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F239A9A71E9E0A15001CA1F9 /* guitar.m4a */; };
+		F2859D801EA4943500C1532F /* 01.caf in Resources */ = {isa = PBXBuildFile; fileRef = F2859D7F1EA4943500C1532F /* 01.caf */; };
+		F2859D811EA4943500C1532F /* 01.caf in Resources */ = {isa = PBXBuildFile; fileRef = F2859D7F1EA4943500C1532F /* 01.caf */; };
+		F2859D821EA4943500C1532F /* 01.caf in Resources */ = {isa = PBXBuildFile; fileRef = F2859D7F1EA4943500C1532F /* 01.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,8 @@
 		F239A9A71E9E0A15001CA1F9 /* guitar.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = guitar.m4a; sourceTree = "<group>"; };
 		F239A9AB1E9E1588001CA1F9 /* AudioFileOperation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AudioFileOperation.playground; sourceTree = "<group>"; };
 		F239A9AC1E9F680F001CA1F9 /* ExtAudioFileOperation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ExtAudioFileOperation.playground; sourceTree = "<group>"; };
+		F2859D7C1EA0C0F000C1532F /* AudioFileStreamOperation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AudioFileStreamOperation.playground; sourceTree = "<group>"; };
+		F2859D7F1EA4943500C1532F /* 01.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +145,7 @@
 				F239A9A51E9DDE9B001CA1F9 /* AudioFileGetGlobalInfo.playground */,
 				F239A9AB1E9E1588001CA1F9 /* AudioFileOperation.playground */,
 				F239A9AC1E9F680F001CA1F9 /* ExtAudioFileOperation.playground */,
+				F2859D7C1EA0C0F000C1532F /* AudioFileStreamOperation.playground */,
 			);
 			name = Playground;
 			sourceTree = "<group>";
@@ -147,6 +153,7 @@
 		F239A9A61E9E09FC001CA1F9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F2859D7F1EA4943500C1532F /* 01.caf */,
 				F239A9A71E9E0A15001CA1F9 /* guitar.m4a */,
 			);
 			name = Resources;
@@ -262,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2859D801EA4943500C1532F /* 01.caf in Resources */,
 				F239A9811E9DDDB6001CA1F9 /* LaunchScreen.storyboard in Resources */,
 				F239A97E1E9DDDB6001CA1F9 /* Assets.xcassets in Resources */,
 				F239A9A81E9E0A15001CA1F9 /* guitar.m4a in Resources */,
@@ -274,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F239A9A91E9E0A15001CA1F9 /* guitar.m4a in Resources */,
+				F2859D811EA4943500C1532F /* 01.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F239A9AA1E9E0A15001CA1F9 /* guitar.m4a in Resources */,
+				F2859D821EA4943500C1532F /* 01.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

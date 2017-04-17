@@ -6,6 +6,7 @@ Some usage tips about Audio(AudioToolbox/CoreAudio/AudioUnit).
 * AudioFileGetGlobalInfo
 * AudioFileOpen/AudioFileClose
 * ExtAudioFile*
+* AudioFileStream*
 
 ## Reference
 
