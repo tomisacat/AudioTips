@@ -8,6 +8,7 @@ Some usage tips about Audio(AudioToolbox/CoreAudio/AudioUnit).
 * ExtAudioFile*
 * AudioFileStream*
 * AudioFormat*
+* [AudioQueue*(play/record)](https://github.com/tomisacat/AudioQueueTutorial)
 
 ## Reference
 

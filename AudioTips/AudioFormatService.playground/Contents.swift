@@ -42,7 +42,7 @@ if let fd = fd {
 //        return
 //    }
     
-    // format info in magic cookie data
+    // format info
     var desc: AudioStreamBasicDescription = AudioStreamBasicDescription()
     var descSize: UInt32 = UInt32(MemoryLayout<AudioStreamBasicDescription>.size)
     status = AudioFormatGetProperty(kAudioFormatProperty_FormatInfo, propertySize, magic, &descSize, &desc)
@@ -70,7 +70,7 @@ if let fd = fd {
     
     print(formatName)
     
-    // format list
+    // format info
     var formatInfo: AudioFormatInfo = AudioFormatInfo(mASBD: desc,
                                                       mMagicCookie: magic,
                                                       mMagicCookieSize: propertySize)
@@ -79,6 +79,7 @@ if let fd = fd {
                                         UInt32(MemoryLayout<AudioFormatInfo>.size),
                                         &formatInfo,
                                         &outputFormatInfoSize)
+    // format list
     let formatListItem: UnsafeMutablePointer<AudioFormatListItem> = UnsafeMutablePointer<AudioFormatListItem>.allocate(capacity: Int(outputFormatInfoSize))
     status = AudioFormatGetProperty(kAudioFormatProperty_FormatList,
                                     UInt32(MemoryLayout<AudioFormatInfo>.size),
