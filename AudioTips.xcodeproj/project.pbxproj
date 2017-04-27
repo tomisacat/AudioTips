@@ -60,6 +60,7 @@
 		F2832FD71EA60AC100A8CA10 /* AudioFormatService.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AudioFormatService.playground; sourceTree = "<group>"; };
 		F2859D7C1EA0C0F000C1532F /* AudioFileStreamOperation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AudioFileStreamOperation.playground; sourceTree = "<group>"; };
 		F2859D7F1EA4943500C1532F /* 01.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01.caf; sourceTree = "<group>"; };
+		F2D48A521EB0AD820012CCE5 /* AudioUnit.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AudioUnit.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +149,7 @@
 				F239A9AC1E9F680F001CA1F9 /* ExtAudioFileOperation.playground */,
 				F2859D7C1EA0C0F000C1532F /* AudioFileStreamOperation.playground */,
 				F2832FD71EA60AC100A8CA10 /* AudioFormatService.playground */,
+				F2D48A521EB0AD820012CCE5 /* AudioUnit.playground */,
 			);
 			name = Playground;
 			sourceTree = "<group>";
@@ -461,6 +463,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QZHY6V5GG8;
 				INFOPLIST_FILE = AudioTips/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.tomisacat.AudioTips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -474,6 +477,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QZHY6V5GG8;
 				INFOPLIST_FILE = AudioTips/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.tomisacat.AudioTips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
